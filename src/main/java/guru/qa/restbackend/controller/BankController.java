@@ -8,10 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jdk.jfr.Description;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -43,7 +40,7 @@ public class BankController {
     @GetMapping("user/getAll")
     @Operation(summary = "GET ALL USERS")
 
-    public List<UserInfo> getAllUsersInfo() {
+    public List<UserInfo> getAllUsersInfo(@RequestParam String param) {
         return users
                 .entrySet()
                 .stream()

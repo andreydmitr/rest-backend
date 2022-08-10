@@ -21,6 +21,7 @@ public class BankControllerTest {
     @Test
     void bankControllerTestGetAllUsersInfo() {
         UserInfo[] getUsers=spec.get("user/getAll")
+
                 .then()
                 .statusCode(200)
                 .extract()
